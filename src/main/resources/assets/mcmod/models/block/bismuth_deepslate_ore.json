@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "mcmod:block/bismuth_deepslate_ore"
+  }
+}
+

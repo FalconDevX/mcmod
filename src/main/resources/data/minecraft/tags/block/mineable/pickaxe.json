@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "mcmod:bismuth_block",
+    "mcmod:bismuth_ore",
+    "mcmod:bismuth_deepslate_ore"
+  ]
+}

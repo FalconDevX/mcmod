@@ -1,4 +1,10 @@
 {
   "item.mcmod.bismuth": "Bismuth",
-  "item.mcmod.raw_bismuth": "Raw Bismuth"
+  "item.mcmod.raw_bismuth": "Raw Bismuth",
+  "block.mcmod.bismuth_block": "Block of Bismuth",
+  "block.mcmod.bismuth_ore": "Bismuth Ore",
+  "block.mcmod.bismuth_deepslate_ore": "Deepslate Bismuth Ore",
+
+  "creativetab.mcmod.bismuth_items": "Bismuth Items",
+  "creativetab.mcmod.bismuth_blocks": "Bismuth Blocks"
 }

@@ -1,5 +1,7 @@
 package net.mati.mcmod;
 
+import net.mati.mcmod.block.ModBlocks;
+import net.mati.mcmod.item.ModCreativeModeTabs;
 import net.mati.mcmod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -47,7 +49,10 @@ public class McMod {
 
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
 
@@ -60,8 +65,14 @@ public class McMod {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.BISMUTH.get());
-            event.accept(ModItems.RAW_BISMUTH.get());
+            event.accept(ModItems.BISMUTH);
+            event.accept(ModItems.RAW_BISMUTH);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.BISMUTH_BLOCK);
+            event.accept(ModBlocks.BISMUTH_ORE);
+            event.accept(ModBlocks.BISMUTH_DEEPSLATE_ORE);
         }
     }
 
