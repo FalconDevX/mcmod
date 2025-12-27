@@ -18,22 +18,29 @@ public class ModCreativeModeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, McMod.MODID);
 
     public static final Supplier<CreativeModeTab> BISMUTH_ITEMS_TAB = CREATIVE_MODE_TAB.register("bismuth_items_tab",
-            () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.BISMUTH.get()))
+            () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.RAW_BISMUTH.get()))
                     .title(Component.translatable("creativetab.mcmod.bismuth_items"))
                     .displayItems((itemDisplayParameters,output) -> {
-                       output.accept(ModItems.BISMUTH);
-                       output.accept(ModItems.RAW_BISMUTH);
+                        output.accept(ModItems.RAW_BISMUTH);
                     }).build());
 
-    public static final Supplier<CreativeModeTab> BISMUTH_BLOCK_TAB = CREATIVE_MODE_TAB.register("bismuth_blocks_tab",
-            () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModBlocks.BISMUTH_BLOCK))
+    public static final Supplier<CreativeModeTab> BISMUTH_BLOCKS_TAB = CREATIVE_MODE_TAB.register("bismuth_blocks_tab",
+            () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModBlocks.BISMUTH_ORE))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(McMod.MODID, "bismuth_items_tab"))
                     .title(Component.translatable("creativetab.mcmod.bismuth_blocks"))
                     .displayItems((itemDisplayParameters,output) -> {
-                       output.accept(ModBlocks.BISMUTH_BLOCK);
-                       output.accept(ModBlocks.BISMUTH_ORE);
-                       output.accept(ModBlocks.BISMUTH_DEEPSLATE_ORE);
+                        output.accept(ModBlocks.BISMUTH_ORE);
+                        output.accept(ModBlocks.BISMUTH_DOOR);
                     }).build());
+
+    public static final Supplier<CreativeModeTab> VINTAGE_FURNITURES = CREATIVE_MODE_TAB.register("vintage_furnitures",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.CABINET))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(McMod.MODID, "bismuth_blocks_tab"))
+                    .title(Component.translatable("creativetab.mcmod.vintage_furnitures"))
+                    .displayItems((itemDisplayParameters,output) -> {
+                        output.accept(ModBlocks.CABINET);
+                    }).build());
+
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);
