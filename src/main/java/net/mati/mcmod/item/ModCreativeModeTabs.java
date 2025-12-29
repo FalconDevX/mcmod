@@ -39,6 +39,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.mcmod.vintage_furnitures"))
                     .displayItems((itemDisplayParameters,output) -> {
                         output.accept(ModBlocks.CABINET);
+                        output.accept(ModBlocks.SOFA);
                     }).build());
 
 

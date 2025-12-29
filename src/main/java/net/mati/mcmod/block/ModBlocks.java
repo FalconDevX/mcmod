@@ -2,7 +2,7 @@ package net.mati.mcmod.block;
 
 import net.mati.mcmod.McMod;
 import net.mati.mcmod.block.custom.CabinetBlock;
-import net.mati.mcmod.block.custom.SofaBlock;
+import net.mati.mcmod.block.custom.sofa.SofaBlock;
 import net.mati.mcmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -28,6 +28,15 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> CABINET = registerBlockWithoutItem("cabinet",
             () -> new CabinetBlock(
+                    BlockBehaviour.Properties.of()
+                            .strength(1.0f)
+                            .sound(SoundType.WOOD)
+                            .noOcclusion()
+            )
+    );
+
+    public static final DeferredBlock<Block> SOFA = registerBlockWithoutItem("sofa",
+            () -> new SofaBlock(
                     BlockBehaviour.Properties.of()
                             .strength(1.0f)
                             .sound(SoundType.WOOD)

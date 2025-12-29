@@ -2,8 +2,13 @@ package net.mati.mcmod.datagen;
 
 import net.mati.mcmod.McMod;
 import net.mati.mcmod.block.ModBlocks;
+import net.mati.mcmod.block.custom.sofa.SofaBlock;
+import net.mati.mcmod.block.custom.sofa.SofaPart;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -12,13 +17,32 @@ public class ModBlockStateProvider extends BlockStateProvider {
         super(output, McMod.MODID, exFileHelper);
     }
 
+    private void sofaBlock() {
+        getVariantBuilder(ModBlocks.SOFA.get())
+                .forAllStates(state -> {
+                    Direction facing = state.getValue(HorizontalDirectionalBlock.FACING);
+                    SofaPart part = state.getValue(SofaBlock.PART);
+
+                    String model = part == SofaPart.LEFT
+                            ? "block/sofa_left"
+                            : "block/sofa_right";
+
+                    return ConfiguredModel.builder()
+                            .modelFile(models().getExistingFile(modLoc(model)))
+                            .rotationY(((int) facing.toYRot()) % 360)
+                            .build();
+                });
+    }
+
+
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.BISMUTH_ORE);
-        blockWithItem(ModBlocks.BISMUTH_DOOR);
-        
-        simpleBlock(ModBlocks.CABINET.get(), 
+
+        horizontalBlock(ModBlocks.CABINET.get(),
                 models().getExistingFile(modLoc("block/cabinet")));
+
+        sofaBlock();
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock){

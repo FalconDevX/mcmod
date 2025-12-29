@@ -4,13 +4,13 @@
   "item.mcmod.chisel": "Chisel",
 
   "block.mcmod.bismuth_block": "Block of Bismuth",
-  "block.mcmod.sofa": "Sofa",
   "block.mcmod.bismuth_ore": "Bismuth Ore",
   "block.mcmod.bismuth_deepslate_ore": "Deepslate Bismuth Ore",
 
   "block.mcmod.bismuth_stairs": "Bismuth Stairs",
   "block.mcmod.bismuth_door": "Bismuth Door",
   "block.mcmod.cabinet": "Cabinet",
+  "block.mcmod.sofa": "Sofa",
 
   "creativetab.mcmod.bismuth_items": "Bismuth Items",
   "creativetab.mcmod.bismuth_blocks": "Bismuth Blocks",

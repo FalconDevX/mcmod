@@ -11,11 +11,12 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(McMod.MODID);
 
     public static final DeferredItem<Item> RAW_BISMUTH = ITEMS.register("raw_bismuth", () -> new Item(new Item.Properties()));
-    
-    // Cabinet as BlockItem - can be placed as block
+
     public static final DeferredItem<Item> CABINET = ITEMS.register("cabinet",
             () -> new BlockItem(net.mati.mcmod.block.ModBlocks.CABINET.get(), new Item.Properties()));
 
+    public static final DeferredItem<Item> SOFA = ITEMS.register("sofa",
+            () -> new BlockItem(net.mati.mcmod.block.ModBlocks.SOFA.get(), new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

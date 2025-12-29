@@ -35,6 +35,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(ModBlocks.CABINET.get());
 
+        dropSelf(ModBlocks.SOFA.get());
+
     }
 
     //get list of all registered blocks
