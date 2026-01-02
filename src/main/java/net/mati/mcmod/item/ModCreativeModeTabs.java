@@ -10,7 +10,6 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.awt.*;
 import java.util.function.Supplier;
 
 public class ModCreativeModeTabs {
@@ -40,6 +39,7 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters,output) -> {
                         output.accept(ModBlocks.CABINET);
                         output.accept(ModBlocks.SOFA);
+                        output.accept(ModBlocks.DESK);
                     }).build());
 
 

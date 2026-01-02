@@ -18,6 +18,9 @@ public class ModItems {
     public static final DeferredItem<Item> SOFA = ITEMS.register("sofa",
             () -> new BlockItem(net.mati.mcmod.block.ModBlocks.SOFA.get(), new Item.Properties()));
 
+    public static final DeferredItem<Item> DESK = ITEMS.register("desk",
+            () -> new BlockItem(net.mati.mcmod.block.ModBlocks.DESK.get(), new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

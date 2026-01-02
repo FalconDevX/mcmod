@@ -4,6 +4,8 @@ import net.mati.mcmod.McMod;
 import net.mati.mcmod.block.ModBlocks;
 import net.mati.mcmod.block.custom.sofa.SofaBlock;
 import net.mati.mcmod.block.custom.sofa.SofaPart;
+import net.mati.mcmod.block.custom.desk.DeskPart;
+import net.mati.mcmod.block.custom.desk.DeskBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -33,6 +35,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
                             .build();
                 });
     }
+    
+    //left right middle desk
+    private void deskBlock() {
+        getVariantBuilder(ModBlocks.DESK.get())
+                .forAllStates(state -> {
+                    Direction facing = state.getValue(HorizontalDirectionalBlock.FACING);
+                    DeskPart part = state.getValue(DeskBlock.PART);
+
+                    String model = part == DeskPart.LEFT
+                            ? "block/desk_left"
+                            : part == DeskPart.MIDDLE
+                            ? "block/desk_middle"
+                            : "block/desk_right";
+
+                    return ConfiguredModel.builder()
+                            .modelFile(models().getExistingFile(modLoc(model)))
+                            .rotationY(((int) facing.toYRot()) % 360)
+                            .build();
+                });
+    }
 
 
     @Override
@@ -43,6 +65,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().getExistingFile(modLoc("block/cabinet")));
 
         sofaBlock();
+        deskBlock();
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock){
