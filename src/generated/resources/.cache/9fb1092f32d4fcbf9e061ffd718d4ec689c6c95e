@@ -1,0 +1,5 @@
+// 1.21	2025-12-27T21:12:28.078004	Recipes
+3f84f1e181474d23400bd06680e6f9a818152ceb data/mcmod/advancement/recipes/building_blocks/bismuth_ore.json
+08327a20e84d5d03f71ca589399324d037fc761e data/mcmod/advancement/recipes/misc/raw_bismuth.json
+531aac7c6d155256f34b94f5130b2636e48c2789 data/mcmod/recipe/bismuth_ore.json
+b0534906650ad97fb50d0eb883a672ab718aa8bc data/mcmod/recipe/raw_bismuth.json

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mcmod:block/cabinet",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mcmod:block/cabinet"
+    },
+    "facing=south": {
+      "model": "mcmod:block/cabinet",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mcmod:block/cabinet",
+      "y": 270
+    }
+  }
+}

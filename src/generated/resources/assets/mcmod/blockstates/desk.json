@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "facing=east,part=left": {
+      "model": "mcmod:block/desk_left",
+      "y": 270
+    },
+    "facing=east,part=middle": {
+      "model": "mcmod:block/desk_middle",
+      "y": 270
+    },
+    "facing=east,part=right": {
+      "model": "mcmod:block/desk_right",
+      "y": 270
+    },
+    "facing=north,part=left": {
+      "model": "mcmod:block/desk_left",
+      "y": 180
+    },
+    "facing=north,part=middle": {
+      "model": "mcmod:block/desk_middle",
+      "y": 180
+    },
+    "facing=north,part=right": {
+      "model": "mcmod:block/desk_right",
+      "y": 180
+    },
+    "facing=south,part=left": {
+      "model": "mcmod:block/desk_left"
+    },
+    "facing=south,part=middle": {
+      "model": "mcmod:block/desk_middle"
+    },
+    "facing=south,part=right": {
+      "model": "mcmod:block/desk_right"
+    },
+    "facing=west,part=left": {
+      "model": "mcmod:block/desk_left",
+      "y": 90
+    },
+    "facing=west,part=middle": {
+      "model": "mcmod:block/desk_middle",
+      "y": 90
+    },
+    "facing=west,part=right": {
+      "model": "mcmod:block/desk_right",
+      "y": 90
+    }
+  }
+}
